@@ -68,11 +68,11 @@ public class Monster_AI : MonoBehaviour
         switch (currentTarget)
         {
             case 0:
-                Debug.Log("t1");
+               
                 currentTarget = 1;
                 break;
             case 1:
-                Debug.Log("t2");
+            
                 currentTarget = 0;
                 break;
         }
