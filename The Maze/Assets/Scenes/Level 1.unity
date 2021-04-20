@@ -305,6 +305,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Maze2
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 031be2880ac3fcc4ea3b6aa735f779ec, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1090762726767700398, guid: 031be2880ac3fcc4ea3b6aa735f779ec, type: 3}
       propertyPath: m_Enabled
       value: 0
@@ -691,7 +695,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 366665442}
-  m_Enabled: 0
+  m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -1326,7 +1330,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: ae49446b2db20bc4c95b9ee6b1483aad, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 45.57
+      value: -3
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: ae49446b2db20bc4c95b9ee6b1483aad, type: 3}
       propertyPath: m_LocalPosition.y
@@ -1334,7 +1338,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: ae49446b2db20bc4c95b9ee6b1483aad, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -39.76
+      value: -32.7
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: ae49446b2db20bc4c95b9ee6b1483aad, type: 3}
       propertyPath: m_LocalRotation.w
@@ -2119,7 +2123,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1785702373}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fbb28895061e9304291a22e4da56b4dc, type: 3}
   m_Name: 
