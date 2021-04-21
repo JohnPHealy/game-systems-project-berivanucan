@@ -1,7 +1,6 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-
+﻿using UnityEngine;
+using System.Collections;
+using UnityEngine.AI;
 public class Monster_AI : MonoBehaviour
 {
     // General state machine variables
@@ -15,7 +14,7 @@ public class Monster_AI : MonoBehaviour
     // Patrol state variables
     public Transform pointA;
     public Transform pointB;
-    public UnityEngine.AI.NavMeshAgent navMeshAgent;
+    public NavMeshAgent navMeshAgent;
     private int currentTarget;
     private float distanceFromTarget;
     private Transform[] waypoints = null;
@@ -24,14 +23,13 @@ public class Monster_AI : MonoBehaviour
         player = GameObject.FindWithTag("Player");
         animator = gameObject.GetComponent<Animator>();
         pointA = GameObject.Find("Waypoint1").transform;
-        pointB = GameObject.Find("Waypoint1").transform;
-        navMeshAgent = gameObject.GetComponent<UnityEngine.AI.NavMeshAgent>();
+        pointB = GameObject.Find("Waypoint2").transform;
+        navMeshAgent = gameObject.GetComponent<NavMeshAgent>();
         waypoints = new Transform[2] {
-        pointA,
-        pointB
-        };
+pointA,
+pointB};
         currentTarget = 0;
-        //navMeshAgent.SetDestination(waypoints[currentTarget].position);
+        navMeshAgent.SetDestination(waypoints[currentTarget].position);
     }
     private void FixedUpdate()
     {
@@ -61,22 +59,18 @@ public class Monster_AI : MonoBehaviour
         distanceFromTarget =
         Vector3.Distance(waypoints[currentTarget].position, transform.position);
         animator.SetFloat("distanceFromWaypoint", distanceFromTarget);
-        SetNextPoint();
     }
     public void SetNextPoint()
     {
         switch (currentTarget)
         {
             case 0:
-               
                 currentTarget = 1;
                 break;
             case 1:
-            
                 currentTarget = 0;
                 break;
         }
         navMeshAgent.SetDestination(waypoints[currentTarget].position);
     }
 }
-
