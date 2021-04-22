@@ -6,6 +6,7 @@ public class Perspective : Sense
     public int viewDistance = 100;
     private Transform playerTransform;
     private Vector3 rayDirection;
+    public Animator anim;
     protected override void Initialize()
     {
         playerTransform =
@@ -30,7 +31,18 @@ public class Perspective : Sense
             if (Physics.Raycast(transform.position, rayDirection, out hit,
             viewDistance))
             {
-                
+
+                if (hit.collider.gameObject.CompareTag("Player"))
+                {
+                    anim.SetBool("isPlayerVisible", true);
+                    Debug.Log("Just seen the player");
+                }
+                else
+                {
+                    anim.SetBool("isPlayerVisible", false);
+                    Debug.Log("Nope no sign!");
+                }
+
                 Aspect aspect = hit.collider.GetComponent<Aspect>();
                 if (aspect != null)
                 {

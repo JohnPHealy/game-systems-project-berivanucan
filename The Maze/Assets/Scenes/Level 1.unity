@@ -1678,7 +1678,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: ae49446b2db20bc4c95b9ee6b1483aad, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -25.6
+      value: -14.62
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: ae49446b2db20bc4c95b9ee6b1483aad, type: 3}
       propertyPath: m_LocalPosition.y
@@ -1753,7 +1753,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1169753547}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a250332030da30f4ca7b945dfed259ff, type: 3}
   m_Name: 
@@ -1790,6 +1790,7 @@ MonoBehaviour:
   detectionRate: 1
   fieldOfView: 45
   viewDistance: 100
+  anim: {fileID: 1169753548}
 --- !u!195 &1169753552
 NavMeshAgent:
   m_ObjectHideFlags: 0
