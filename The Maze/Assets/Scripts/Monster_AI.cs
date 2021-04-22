@@ -73,4 +73,9 @@ pointB};
         }
         navMeshAgent.SetDestination(waypoints[currentTarget].position);
     }
+
+    public void Chase()
+    {
+        navMeshAgent.destination = player.transform.position;
+    }
 }
