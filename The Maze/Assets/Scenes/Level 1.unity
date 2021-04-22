@@ -1720,6 +1720,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Monster1
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: ae49446b2db20bc4c95b9ee6b1483aad, type: 3}
+      propertyPath: m_TagString
+      value: Monster
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ae49446b2db20bc4c95b9ee6b1483aad, type: 3}
 --- !u!1 &1169753547 stripped
@@ -1761,6 +1765,7 @@ MonoBehaviour:
   pointA: {fileID: 1386644716}
   pointB: {fileID: 1816736412}
   navMeshAgent: {fileID: 1169753552}
+  maxHealth: 100
 --- !u!114 &1169753550
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2990,6 +2995,7 @@ MonoBehaviour:
   pointA: {fileID: 1386644716}
   pointB: {fileID: 1816736412}
   navMeshAgent: {fileID: 1785702378}
+  maxHealth: 100
 --- !u!114 &1785702376
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3428,6 +3434,7 @@ GameObject:
   - component: {fileID: 2055153970}
   - component: {fileID: 2055153969}
   - component: {fileID: 2055153972}
+  - component: {fileID: 2055153973}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -3481,7 +3488,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2055153968}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -21.91, y: 1, z: 40.1}
+  m_LocalPosition: {x: -27, y: 1, z: 34}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 167290912}
@@ -3504,6 +3511,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   aspectType: 0
+--- !u!114 &2055153973
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2055153968}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b8e7be8e73ea6844cae5ccca16665a2e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 10
+  currentHealth: 0
+  canHurt: 0
 --- !u!1001 &2135097136
 PrefabInstance:
   m_ObjectHideFlags: 0

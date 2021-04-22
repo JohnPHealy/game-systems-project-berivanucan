@@ -18,8 +18,11 @@ public class Monster_AI : MonoBehaviour
     private int currentTarget;
     private float distanceFromTarget;
     private Transform[] waypoints = null;
+    public int maxHealth = 100;
+    int currentHealth;
     private void Awake()
     {
+        currentHealth = maxHealth;
         player = GameObject.FindWithTag("Player");
         animator = gameObject.GetComponent<Animator>();
         pointA = GameObject.Find("Waypoint1").transform;
@@ -60,6 +63,7 @@ pointB};
         Vector3.Distance(waypoints[currentTarget].position, transform.position);
         animator.SetFloat("distanceFromWaypoint", distanceFromTarget);
     }
+
     public void SetNextPoint()
     {
         switch (currentTarget)
@@ -77,5 +81,27 @@ pointB};
     public void Chase()
     {
         navMeshAgent.destination = player.transform.position;
+    }
+
+    public void TakeDamage(int damage)
+    {
+
+        currentHealth -= damage;
+
+        if (currentHealth <= 0)
+        {
+            Die();
+        }
+    }
+
+    void Die()
+    {
+        
+        animator.SetBool("isDead", true);
+
+        GetComponent<Collider>().enabled = false;
+        Destroy(gameObject, 2);
+        this.enabled = false;
+
     }
 }
