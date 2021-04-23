@@ -12,12 +12,25 @@ public class GuideAI : MonoBehaviour
     private float currentDistance;
     private Vector3 checkDirection;
     // Patrol state variables
-    public Transform pointA;
-    public Transform pointB;
+    public Transform point1;
+    public Transform point2;
+    public Transform point3;
+    public Transform point4;
+    public Transform point5;
+    public Transform point6;
+    public Transform point7;
+    public Transform point8;
+    public Transform point9;
+    public Transform point10;
+    public Transform point11;
+    public Transform point12;
+    public Transform point13;
+    public Transform point14;
+    public Transform point15;
     public NavMeshAgent navMeshAgent;
-    private int currentTarget;
+    public int currentTarget;
     private float distanceFromTarget;
-    private Transform[] waypoints = null;
+    public Transform[] waypoints = null;
     public int maxHealth = 100;
     int currentHealth;
     private void Awake()
@@ -26,9 +39,23 @@ public class GuideAI : MonoBehaviour
         player = GameObject.FindWithTag("Player");
         animator = gameObject.GetComponent<Animator>();
         navMeshAgent = gameObject.GetComponent<NavMeshAgent>();
-        waypoints = new Transform[2] {
-pointA,
-pointB};
+        waypoints = new Transform[15] {
+point1,
+point2, 
+point3,
+point4,
+point5,
+point6,
+point7,
+point8,
+point9,
+point10,
+point11,
+point12,
+point13,
+point14,
+point15
+        };
         currentTarget = 0;
         navMeshAgent.SetDestination(waypoints[currentTarget].position);
     }
@@ -64,14 +91,58 @@ pointB};
 
     public void SetNextPoint()
     {
+        
         switch (currentTarget)
         {
             case 0:
                 currentTarget = 1;
                 break;
             case 1:
-                currentTarget = 0;
+                currentTarget = 2;
                 break;
+            case 2:
+                currentTarget = 3;
+                break;
+            case 3:
+                currentTarget = 4;
+                break;
+            case 4:
+                currentTarget = 5;
+                break;
+            case 5:
+                currentTarget = 6;
+                break;
+            case 6:
+                currentTarget = 7;
+                break;
+            case 7:
+                currentTarget = 8;
+                break;
+            case 8:
+                currentTarget = 9;
+                break;
+            case 9:
+                currentTarget = 10;
+                break;
+            case 10:
+                currentTarget = 11;
+                break;
+            case 11:
+                currentTarget = 12;
+                break;
+            case 12:
+                currentTarget = 13;
+                break;
+            case 13:
+                currentTarget = 14;
+                break;
+            case 14:
+                currentTarget = 15;
+                break;
+            case 15:
+                currentTarget = 15;
+                break;
+
         }
         navMeshAgent.SetDestination(waypoints[currentTarget].position);
     }

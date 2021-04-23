@@ -22,7 +22,7 @@ public class ChaseBehavior : StateMachineBehaviour
     override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
         Monster_AI monsterAI = animator.gameObject.GetComponent<Monster_AI>();
-        monsterAI.SetNextPoint();
+        monsterAI.navMeshAgent.SetDestination(monsterAI.waypoints[monsterAI.currentTarget].position);
     }
 
     // OnStateMove is called right after Animator.OnAnimatorMove()

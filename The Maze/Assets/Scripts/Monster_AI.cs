@@ -15,9 +15,9 @@ public class Monster_AI : MonoBehaviour
     public Transform pointA;
     public Transform pointB;
     public NavMeshAgent navMeshAgent;
-    private int currentTarget;
+    public int currentTarget;
     private float distanceFromTarget;
-    private Transform[] waypoints = null;
+    public Transform[] waypoints = null;
     public int maxHealth = 100;
     int currentHealth;
     private void Awake()
