@@ -104,4 +104,15 @@ pointB};
         this.enabled = false;
 
     }
+
+    void OnTriggerEnter(Collider other)
+    {
+
+        if (other.CompareTag("Player") || other.CompareTag("Fireball"))
+        {
+         
+            Chase();
+            
+        }
+    }
 }

@@ -218,6 +218,7 @@ MonoBehaviour:
   point15: {fileID: 1333942781}
   navMeshAgent: {fileID: 21346906}
   currentTarget: 0
+  waypoints: []
   maxHealth: 100
 --- !u!95 &21346908
 Animator:
@@ -1751,7 +1752,7 @@ GameObject:
   - component: {fileID: 570453261}
   m_Layer: 0
   m_Name: Fireball
-  m_TagString: Untagged
+  m_TagString: Fireball
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3034,7 +3035,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: ae49446b2db20bc4c95b9ee6b1483aad, type: 3}
       propertyPath: m_LocalScale.z
-      value: 2
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: ae49446b2db20bc4c95b9ee6b1483aad, type: 3}
       propertyPath: m_LocalPosition.x
@@ -3125,6 +3126,8 @@ MonoBehaviour:
   pointA: {fileID: 1386644716}
   pointB: {fileID: 1816736412}
   navMeshAgent: {fileID: 1169753552}
+  currentTarget: 0
+  waypoints: []
   maxHealth: 100
 --- !u!114 &1169753550
 MonoBehaviour:
@@ -3192,6 +3195,22 @@ CapsuleCollider:
   m_Height: 2.7933035
   m_Direction: 1
   m_Center: {x: 8.862569e-16, y: 0.89665174, z: 0.18736476}
+--- !u!54 &1169753555
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1169753547}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1001 &1236292498
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5303,6 +5322,8 @@ MonoBehaviour:
   pointA: {fileID: 1386644716}
   pointB: {fileID: 1816736412}
   navMeshAgent: {fileID: 1785702378}
+  currentTarget: 0
+  waypoints: []
   maxHealth: 100
 --- !u!114 &1785702376
 MonoBehaviour:
@@ -5955,7 +5976,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2055153968}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 45, y: 1, z: -44}
+  m_LocalPosition: {x: -6, y: 1, z: 41}
   m_LocalScale: {x: 0.5, y: 1, z: 0.5}
   m_Children:
   - {fileID: 167290912}
