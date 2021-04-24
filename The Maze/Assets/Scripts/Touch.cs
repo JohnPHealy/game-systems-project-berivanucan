@@ -6,7 +6,7 @@ public class Touch : Sense
         
         if (gameObject.CompareTag("Player") || gameObject.CompareTag("Fireball"))
         {
-            
+           
         }
     }
 }
