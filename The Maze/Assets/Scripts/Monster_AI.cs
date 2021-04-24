@@ -18,8 +18,11 @@ public class Monster_AI : MonoBehaviour
     public int currentTarget;
     private float distanceFromTarget;
     public Transform[] waypoints = null;
-    public int maxHealth = 100;
-    int currentHealth;
+    public int maxHealth = 0;
+    public int currentHealth;
+    public Vector3 playerPosition;
+    public Vector3 monsterPosition;
+    public Vector3 delta;
     private void Awake()
     {
         currentHealth = maxHealth;
@@ -62,6 +65,8 @@ pointB};
         distanceFromTarget =
         Vector3.Distance(waypoints[currentTarget].position, transform.position);
         animator.SetFloat("distanceFromWaypoint", distanceFromTarget);
+
+        
     }
 
     public void SetNextPoint()
@@ -100,19 +105,26 @@ pointB};
         animator.SetBool("isDead", true);
 
         GetComponent<Collider>().enabled = false;
-        Destroy(gameObject, 2);
-        this.enabled = false;
-
+        //Destroy(gameObject, 10);
+       
     }
 
-    void OnTriggerEnter(Collider other)
-    {
+    
 
-        if (other.CompareTag("Player") || other.CompareTag("Fireball"))
+    private void OnTriggerEnter(Collider other)
+    {
+        
+        if (other.gameObject.tag == "Player")
         {
-         
-            Chase();
-            
+            Debug.Log("OOOY OOOOY OOOOY I AM ON FIRE SIMONE");
         }
+    }
+
+    public void LookAtPlayer()
+    {
+        Vector3 delta = new Vector3(playerPosition.x - monsterPosition.x, 0.0f, playerPosition.z - monsterPosition.z);
+
+        Quaternion rotation = Quaternion.LookRotation(delta);
+
     }
 }

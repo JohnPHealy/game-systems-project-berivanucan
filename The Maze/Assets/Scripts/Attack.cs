@@ -9,16 +9,23 @@ public class Attack : StateMachineBehaviour
     // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
+        Monster_AI monsterAI = animator.gameObject.GetComponent<Monster_AI>();
+        monsterAI.navMeshAgent.velocity = new Vector3(0,0,0);
+        monsterAI.LookAtPlayer();
+        monsterAI.Chase();
         
     }
     
   
 
     // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
-    //override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
-    //{
-    //    
-    //}
+    override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
+    {
+        Monster_AI monsterAI = animator.gameObject.GetComponent<Monster_AI>();
+        monsterAI.LookAtPlayer();
+        monsterAI.Chase();
+
+    }
 
     // OnStateExit is called when a transition ends and the state machine finishes evaluating this state
     override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
