@@ -12,8 +12,9 @@ public class Shoot : MonoBehaviour
 
     void OnCollisionEnter(Collision co)
     {
-        if(co.gameObject.tag != "Bullet" && co.gameObject.tag != "Player" && !collided)
+        if(co.gameObject.tag != "Fireball" && co.gameObject.tag != "Player" && !collided)
         {
+            Debug.Log("fire working");
             collided = true;
             Destroy(gameObject);
             Instantiate(explosionVFX, transform.position, transform.rotation);

@@ -21,13 +21,23 @@ public class PlayerHealth : MonoBehaviour
     {
         
     }
-
     public void OnCollisionEnter(Collision other)
     {
-        if(other.gameObject.tag=="Monster")
+        
+        if (other.gameObject.CompareTag("Monster"))
+        {
+            Debug.Log("simoneeeeeee!");
+            TakeDamage(1);
+        }
+
+    }
+    public void OnCollisionExit(Collision other)
+    {
+        
+        if (other.gameObject.CompareTag("Monster"))
             {
-                Debug.Log("take damage");
-                TakeDamage(1);
+                Debug.Log("simoneeeeeee!");
+               
             }
         
     }

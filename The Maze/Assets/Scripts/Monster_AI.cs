@@ -109,18 +109,17 @@ pointB};
        
     }
 
-    
-
-    private void OnTriggerEnter(Collider other)
+    private void OnCollisionEnter(Collision other)
     {
-        
-        if (other.gameObject.tag == "Player")
+
+        if (other.gameObject.CompareTag("Player") || other.gameObject.CompareTag("Fireball"))
         {
             Debug.Log("OOOY OOOOY OOOOY I AM ON FIRE SIMONE");
         }
+
     }
 
-    public void LookAtPlayer()
+        public void LookAtPlayer()
     {
         Vector3 delta = new Vector3(playerPosition.x - monsterPosition.x, 0.0f, playerPosition.z - monsterPosition.z);
 
