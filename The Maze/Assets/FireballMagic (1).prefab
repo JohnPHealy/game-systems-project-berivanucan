@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 5002317809615227038}
   - component: {fileID: 5002317809615227025}
   - component: {fileID: 6519789833031874610}
+  - component: {fileID: 7914765033484381046}
   m_Layer: 0
   m_Name: FireballMagic (1)
   m_TagString: Fireball
@@ -174,3 +175,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   explosionVFX: {fileID: 159918, guid: a0040bf7072bc2f4e82d887d50a9c5e2, type: 3}
   expDuration: 2
+--- !u!114 &7914765033484381046
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5002317809615227029}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6d9ff56dc58ba344ca26924cd2c8e9d4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

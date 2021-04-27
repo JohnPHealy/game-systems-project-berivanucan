@@ -36,7 +36,9 @@ public class PlayerHealth : MonoBehaviour
         
         if (other.gameObject.CompareTag("Monster"))
             {
-                Debug.Log("simoneeeeeee!");
+                Debug.Log("exit collide");
+                other.gameObject.GetComponent<Monster_AI>().TakeDamage(10);
+                TakeDamage(1);
                
             }
         

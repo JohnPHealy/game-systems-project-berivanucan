@@ -105,7 +105,8 @@ pointB};
         animator.SetBool("isDead", true);
 
         GetComponent<Collider>().enabled = false;
-        //Destroy(gameObject, 10);
+        
+        Destroy(gameObject, 4);
        
     }
 
@@ -115,6 +116,7 @@ pointB};
         if (other.gameObject.CompareTag("Player") || other.gameObject.CompareTag("Fireball"))
         {
             Debug.Log("OOOY OOOOY OOOOY I AM ON FIRE SIMONE");
+            TakeDamage(10);
         }
 
     }
