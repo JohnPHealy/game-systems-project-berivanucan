@@ -8,7 +8,7 @@ AnimatorState:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: Monster1_PatrolEntry
-  m_Speed: 1
+  m_Speed: 20
   m_CycleOffset: 0
   m_Transitions:
   - {fileID: 6394804175932688098}
@@ -63,9 +63,6 @@ AnimatorStateTransition:
   - m_ConditionMode: 3
     m_ConditionEvent: distanceFromWaypoint
     m_EventTreshold: 5
-  - m_ConditionMode: 2
-    m_ConditionEvent: isPlayerVisible
-    m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: -3177161192393749800}
   m_Solo: 0
@@ -101,7 +98,7 @@ AnimatorStateMachine:
   m_ChildStateMachines:
   - serializedVersion: 1
     m_StateMachine: {fileID: -7077029067758515752}
-    m_Position: {x: 220, y: 70, z: 0}
+    m_Position: {x: 220, y: 80, z: 0}
   m_AnyStateTransitions:
   - {fileID: -6439763213100885695}
   m_EntryTransitions: []
@@ -165,7 +162,7 @@ AnimatorStateMachine:
   m_AnyStatePosition: {x: 370, y: 90, z: 0}
   m_EntryPosition: {x: 130, y: -340, z: 0}
   m_ExitPosition: {x: 860, y: 160, z: 0}
-  m_ParentStateMachinePosition: {x: 100, y: 90, z: 0}
+  m_ParentStateMachinePosition: {x: 110, y: -20, z: 0}
   m_DefaultState: {fileID: -9054924409875129946}
 --- !u!1101 &-6836259513855261132
 AnimatorStateTransition:
@@ -178,9 +175,6 @@ AnimatorStateTransition:
   - m_ConditionMode: 4
     m_ConditionEvent: distanceFromPlayer
     m_EventTreshold: 2
-  - m_ConditionMode: 1
-    m_ConditionEvent: isPlayerVisible
-    m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 9159006880172399978}
   m_Solo: 0
@@ -419,9 +413,6 @@ AnimatorStateTransition:
   m_PrefabAsset: {fileID: 0}
   m_Name: 
   m_Conditions:
-  - m_ConditionMode: 2
-    m_ConditionEvent: isPlayerVisible
-    m_EventTreshold: 1
   - m_ConditionMode: 4
     m_ConditionEvent: distanceFromWaypoint
     m_EventTreshold: 5

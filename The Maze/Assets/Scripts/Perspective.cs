@@ -7,6 +7,8 @@ public class Perspective : Sense
     private Transform playerTransform;
     private Vector3 rayDirection;
     public Animator anim;
+    Monster_AI monster_AI;
+
     protected override void Initialize()
     {
         playerTransform =
@@ -37,7 +39,7 @@ public class Perspective : Sense
                     anim.SetBool("isPlayerVisible", true);
                     Debug.Log("Just seen the player");
                 }
-                else
+                else if (monster_AI.currentDistance < 20)
                 {
                     anim.SetBool("isPlayerVisible", false);
                     Debug.Log("Nope no sign!");

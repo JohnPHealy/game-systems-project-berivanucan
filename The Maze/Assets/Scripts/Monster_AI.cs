@@ -9,7 +9,7 @@ public class Monster_AI : MonoBehaviour
     private Ray ray;
     private RaycastHit hit;
     private float maxDistanceToCheck = 6.0f;
-    private float currentDistance;
+    public float currentDistance;
     private Vector3 checkDirection;
     // Patrol state variables
     public Transform pointA;
@@ -46,7 +46,7 @@ pointB};
         //Then we check for visibility
         checkDirection = player.transform.position - transform.position;
         ray = new Ray(transform.position, checkDirection);
-        if (Physics.Raycast(ray, out hit, maxDistanceToCheck))
+        /*if (Physics.Raycast(ray, out hit, maxDistanceToCheck))
         {
             if (hit.collider.gameObject == player)
             {
@@ -60,7 +60,7 @@ pointB};
         else
         {
             animator.SetBool("isPlayerVisible", false);
-        }
+        }*/
         //Lastly, we get the distance to the next waypoint target
         distanceFromTarget =
         Vector3.Distance(waypoints[currentTarget].position, transform.position);
