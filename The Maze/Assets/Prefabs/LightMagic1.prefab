@@ -53,16 +53,16 @@ VisualEffect:
   m_PropertySheet:
     m_Float:
       m_Array:
-      - m_Value: 0.1
+      - m_Value: 0.05
         m_Name: Size
         m_Overridden: 1
-      - m_Value: 30
+      - m_Value: 20
         m_Name: trailSpawnRate
         m_Overridden: 1
       - m_Value: 0.2
         m_Name: TrailsLifeTime
         m_Overridden: 1
-      - m_Value: 500000
+      - m_Value: 5000
         m_Name: SpawnRate
         m_Overridden: 1
     m_Vector2f:
@@ -71,12 +71,12 @@ VisualEffect:
       m_Array: []
     m_Vector4f:
       m_Array:
-      - m_Value: {x: 0.019437497, y: 0.47487006, z: 0.8584906, w: 1}
+      - m_Value: {x: 0.59607846, y: 0.43576282, z: 0.1098039, w: 1}
         m_Name: color
-        m_Overridden: 0
-      - m_Value: {x: 0.93773586, y: 1, z: 0.9933808, w: 1}
+        m_Overridden: 1
+      - m_Value: {x: 0.9629564, y: 1, z: 0.35294116, w: 1}
         m_Name: secondColor
-        m_Overridden: 0
+        m_Overridden: 1
     m_Uint:
       m_Array: []
     m_Int:
@@ -182,9 +182,9 @@ Light:
   serializedVersion: 10
   m_Type: 2
   m_Shape: 0
-  m_Color: {r: 0.9433962, g: 0.9433962, b: 0.9433962, a: 1}
-  m_Intensity: 30
-  m_Range: 10
+  m_Color: {r: 0.9433962, g: 0.84950465, b: 0.48504806, a: 1}
+  m_Intensity: 10
+  m_Range: 20
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
@@ -253,7 +253,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7515983695256092507}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0cfdd2baf1dca504d8062b91cc2d8870, type: 3}
   m_Name: 
