@@ -11125,7 +11125,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.5
-  m_Speed: 3.5
+  m_Speed: 4
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 120
@@ -12728,7 +12728,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!108 &1207690484
 Light:
   m_ObjectHideFlags: 0
@@ -12740,8 +12740,8 @@ Light:
   serializedVersion: 10
   m_Type: 1
   m_Shape: 0
-  m_Color: {r: 1, g: 0.95686275, b: 0.8392157, a: 1}
-  m_Intensity: 1
+  m_Color: {r: 0.6509434, g: 0.6509434, b: 0.6509434, a: 1}
+  m_Intensity: 0.2
   m_Range: 10
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
@@ -12797,13 +12797,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1207690483}
-  m_LocalRotation: {x: 0.40821788, y: -0.23456968, z: 0.10938163, w: 0.8754261}
-  m_LocalPosition: {x: -25.9, y: 39.8, z: 38.1}
+  m_LocalRotation: {x: 0.9402509, y: -0.14663413, z: -0.20381133, w: 0.22997327}
+  m_LocalPosition: {x: -56.9, y: 39.8, z: 20.2}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 38
-  m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
+  m_LocalEulerAnglesHint: {x: 158.118, y: 29.059006, z: 23.464005}
 --- !u!1 &1219598259
 GameObject:
   m_ObjectHideFlags: 0
@@ -14769,43 +14769,43 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: f0144d13fd13d7645b51b25321970275, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 46
+      value: 45.878925
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: f0144d13fd13d7645b51b25321970275, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2
+      value: 2.2992945
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: f0144d13fd13d7645b51b25321970275, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -36.944
+      value: -36.30487
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: f0144d13fd13d7645b51b25321970275, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 1
+      value: 0.2178233
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: f0144d13fd13d7645b51b25321970275, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: 0.250434
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: f0144d13fd13d7645b51b25321970275, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: 0.87150425
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: f0144d13fd13d7645b51b25321970275, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0.36099347
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: f0144d13fd13d7645b51b25321970275, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
+      value: 47.588
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: f0144d13fd13d7645b51b25321970275, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
+      value: 522.852
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: f0144d13fd13d7645b51b25321970275, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
+      value: -335.542
       objectReference: {fileID: 0}
     - target: {fileID: -7511558181221131132, guid: f0144d13fd13d7645b51b25321970275, type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -23463,7 +23463,7 @@ PrefabInstance:
       objectReference: {fileID: 279355634}
     - target: {fileID: 6032367564165664259, guid: c1dbbd30dcfa3bc48bd11428746c3c79, type: 3}
       propertyPath: m_Enabled
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6032367564165664259, guid: c1dbbd30dcfa3bc48bd11428746c3c79, type: 3}
       propertyPath: m_IsTrigger
