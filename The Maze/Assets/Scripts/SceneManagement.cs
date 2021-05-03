@@ -7,7 +7,7 @@ public class SceneManagement : MonoBehaviour
 {
     public void playGame()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        SceneManager.LoadScene("Level 1");
     }
 
     public void QuitGame()
@@ -18,6 +18,18 @@ public class SceneManagement : MonoBehaviour
 
     public void playAgain()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 2);
+        SceneManager.LoadScene("Level 1");
+    }
+
+    public void Back()
+    {
+        SceneManager.LoadScene("StartMenu");
+
+    }
+
+    public void Instructions()
+    {
+        SceneManager.LoadScene("Instructions");
+
     }
 }
