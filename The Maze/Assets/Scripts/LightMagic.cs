@@ -14,6 +14,7 @@ public class LightMagic : MonoBehaviour
     public float projectileSpeed = 30f;
     public Rigidbody rb;
     public float arcRange = 1f;
+    public AudioSource lightAudio;
 
     // Start is called before the first frame update
     void Start()
@@ -28,6 +29,7 @@ public class LightMagic : MonoBehaviour
         
         {
             ShootProjectile();
+            lightAudio.Play();
         }
     }
 

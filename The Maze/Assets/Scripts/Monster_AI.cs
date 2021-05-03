@@ -8,7 +8,6 @@ public class Monster_AI : MonoBehaviour
     private Animator animator;
     private Ray ray;
     private RaycastHit hit;
-    private float maxDistanceToCheck = 6.0f;
     public float currentDistance;
     private Vector3 checkDirection;
     // Patrol state variables
@@ -43,30 +42,15 @@ pointB};
         currentDistance = Vector3.Distance(player.transform.position,
         transform.position);
         animator.SetFloat("distanceFromPlayer", currentDistance);
+
         //Then we check for visibility
         checkDirection = player.transform.position - transform.position;
         ray = new Ray(transform.position, checkDirection);
-        /*if (Physics.Raycast(ray, out hit, maxDistanceToCheck))
-        {
-            if (hit.collider.gameObject == player)
-            {
-                animator.SetBool("isPlayerVisible", true);
-            }
-            else
-            {
-                animator.SetBool("isPlayerVisible", false);
-            }
-        }
-        else
-        {
-            animator.SetBool("isPlayerVisible", false);
-        }*/
+        
         //Lastly, we get the distance to the next waypoint target
         distanceFromTarget =
         Vector3.Distance(waypoints[currentTarget].position, transform.position);
         animator.SetFloat("distanceFromWaypoint", distanceFromTarget);
-
-        
     }
 
     public void SetNextPoint()
@@ -90,9 +74,7 @@ pointB};
 
     public void TakeDamage(int damage)
     {
-
         currentHealth -= damage;
-
         if (currentHealth <= 0)
         {
             Die();
@@ -101,31 +83,22 @@ pointB};
 
     void Die()
     {
-        
         animator.SetBool("isDead", true);
-
         GetComponent<Collider>().enabled = false;
-        
         Destroy(gameObject, 4);
-       
     }
 
     private void OnCollisionEnter(Collision other)
     {
-
         if (other.gameObject.CompareTag("Player") || other.gameObject.CompareTag("Fireball"))
         {
-            Debug.Log("OOOY OOOOY OOOOY I AM ON FIRE SIMONE");
-            TakeDamage(10);
+            TakeDamage(4);
         }
-
     }
 
-        public void LookAtPlayer()
+    public void LookAtPlayer()
     {
         Vector3 delta = new Vector3(playerPosition.x - monsterPosition.x, 0.0f, playerPosition.z - monsterPosition.z);
-
         Quaternion rotation = Quaternion.LookRotation(delta);
-
     }
 }

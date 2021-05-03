@@ -47,72 +47,26 @@ public class PlayerHealth : MonoBehaviour
 
     public void TakeDamage(int damage)
     {
-
         currentHealth -= damage;
-
-
 
         if (currentHealth <= 0)
         {
-     
             Die();
             Destroy(gameObject, 3);
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 2);
         }
     }
 
-    public void Heal(string heal)
-    {
-        Debug.Log("Before Switch");
-        switch (heal)
-        {
-            case "BluePotion":
-                {
-                    currentHealth += 1;
-                    Debug.Log("After Switch");
-                }
-                break;
-            case "GreenPotion":
-                {
-                    currentHealth += 3;
-                    Debug.Log("After Switch");
-                }
-                break;
-            case "PurplePotion":
-                {
-                    currentHealth += 2;
-                    Debug.Log("After Switch");
-                }
-                break;
-            case "RedPotion":
-                {
-                    currentHealth += 4;
-                    Debug.Log("After Switch");
-                }
-                break;
-            case "YellowPotion":
-                {
-                    currentHealth += 1;
-                    Debug.Log("After Switch");
-                }
-                break;
-
-        }
-
-
-        if (currentHealth <= maxHealth)
-        {
-
-        }
-    }
-
+    
 
     public void Die()
     {
         Debug.Log("player died");
       
-
         Invoke("ReturnMenu", 2f);
+
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
 
         GetComponent<Collider>().enabled = false;
 

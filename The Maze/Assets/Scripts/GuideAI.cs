@@ -12,50 +12,20 @@ public class GuideAI : MonoBehaviour
     private float currentDistance;
     private Vector3 checkDirection;
     // Patrol state variables
-    public Transform point1;
-    public Transform point2;
-    public Transform point3;
-    public Transform point4;
-    public Transform point5;
-    public Transform point6;
-    public Transform point7;
-    public Transform point8;
-    public Transform point9;
-    public Transform point10;
-    public Transform point11;
-    public Transform point12;
-    public Transform point13;
-    public Transform point14;
-    public Transform point15;
+
+    public Transform point1, point2, point3, point4, point5, point6, point7, point8, point9, point10, point11, point12, point13, point14, point15;
     public NavMeshAgent navMeshAgent;
     public int currentTarget;
     private float distanceFromTarget;
     public Transform[] waypoints = null;
-    public int maxHealth = 100;
-    int currentHealth;
+    
     private void Awake()
     {
-        currentHealth = maxHealth;
+       
         player = GameObject.FindWithTag("Player");
         animator = gameObject.GetComponent<Animator>();
         navMeshAgent = gameObject.GetComponent<NavMeshAgent>();
-        waypoints = new Transform[15] {
-point1,
-point2, 
-point3,
-point4,
-point5,
-point6,
-point7,
-point8,
-point9,
-point10,
-point11,
-point12,
-point13,
-point14,
-point15
-        };
+        waypoints = new Transform[15] {point1, point2, point3, point4, point5, point6, point7, point8, point9, point10, point11, point12, point13, point14, point15};
         currentTarget = 0;
         navMeshAgent.SetDestination(waypoints[currentTarget].position);
     }
@@ -65,6 +35,7 @@ point15
         currentDistance = Vector3.Distance(player.transform.position,
         transform.position);
         animator.SetFloat("playerDistance", currentDistance);
+
         //Then we check for visibility
         checkDirection = player.transform.position - transform.position;
         ray = new Ray(transform.position, checkDirection);
@@ -83,6 +54,7 @@ point15
         {
             animator.SetBool("isPlayerVisible", false);
         }
+
         //Lastly, we get the distance to the next waypoint target
         distanceFromTarget =
         Vector3.Distance(waypoints[currentTarget].position, transform.position);
@@ -150,27 +122,5 @@ point15
     public void FindPlayer()
     {
         navMeshAgent.destination = player.transform.position;
-    }
-
-    public void TakeDamage(int damage)
-    {
-
-        currentHealth -= damage;
-
-        if (currentHealth <= 0)
-        {
-            Die();
-        }
-    }
-
-    void Die()
-    {
-
-        animator.SetBool("isDead", true);
-
-        GetComponent<Collider>().enabled = false;
-        Destroy(gameObject, 2);
-        this.enabled = false;
-
     }
 }

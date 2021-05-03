@@ -54,7 +54,10 @@ public class PortalController : MonoBehaviour
 
         if (distanceFromTarget <= 2f && canClose)
         {
+
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+            Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;
         }
     }
 

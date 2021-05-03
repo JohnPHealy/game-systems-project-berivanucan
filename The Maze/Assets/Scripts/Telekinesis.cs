@@ -10,14 +10,17 @@ public class Telekinesis : MonoBehaviour
     public float attractionSpeed;
     public float minThrowForce;
     public float maxThrowForce;
+    public AudioSource telekinesisAudio;
 
     private float throwForce;
     private GameObject heldObject;
     private Rigidbody rbOfHeldObject;
     private bool holdsObject = false;
     private Vector3 rotateVector = Vector3.one;
- 
- void Start()
+    
+
+
+    void Start()
  {
     throwForce = minThrowForce;
  }
@@ -28,18 +31,21 @@ public class Telekinesis : MonoBehaviour
     if (Input.GetMouseButtonDown(0) && !holdsObject)
  {
     Raycast();
- }
+            telekinesisAudio.Play();
 
-    if (Input.GetMouseButton(1) && holdsObject)
+        }
+
+        if (Input.GetMouseButton(1) && holdsObject)
     {
         float lightSpeed = 35f;
         float amount = 0.001f;
         float randSin;
  
         randSin = Mathf.Sin(Time.time * lightSpeed) * amount;
+            telekinesisAudio.Play();
 
 
-        heldObject.transform.position = new Vector3(heldObject.transform.position.x, heldObject.transform.position.y+randSin, heldObject.transform.position.z);
+            heldObject.transform.position = new Vector3(heldObject.transform.position.x, heldObject.transform.position.y+randSin, heldObject.transform.position.z);
 
 
         float diff = 0.001f;
@@ -50,14 +56,19 @@ public class Telekinesis : MonoBehaviour
     if (Input.GetMouseButtonUp(1) && holdsObject)
     {
     ShootObject();
-    }
 
-    if (Input.GetKeyDown(KeyCode.F) && holdsObject)
+            telekinesisAudio.Play();
+
+        }
+
+        if (Input.GetKeyDown(KeyCode.F) && holdsObject)
     {
     ReleaseObject();
-    }
+            telekinesisAudio.Play();
 
-    if (holdsObject)
+        }
+
+        if (holdsObject)
     {
     RotateObject();
 
@@ -69,7 +80,7 @@ public class Telekinesis : MonoBehaviour
  }
  
  
- // ----------------------------- POLISHING SECTION 
+
  private void CalculateRotationVector()
  {
     float x = Random.Range(-0.5f, 0.5f); // will rotate with different speed
@@ -84,14 +95,7 @@ public class Telekinesis : MonoBehaviour
     heldObject.transform.Rotate(rotateVector);
  }
  
- 
- 
- 
- 
- 
- 
- 
- // ---------------------------------- FUNCTIONAL SECTION
+
  public float CheckDistance()
  {
  return Vector3.Distance(heldObject.transform.position, holdPosition.transform.position);
@@ -132,7 +136,7 @@ public class Telekinesis : MonoBehaviour
  heldObject.transform.SetParent(holdPosition);
 
  rbOfHeldObject = heldObject.GetComponent<Rigidbody>();
- rbOfHeldObject.constraints = RigidbodyConstraints.FreezeAll; // we want it to be stuck
+ rbOfHeldObject.constraints = RigidbodyConstraints.FreezeAll; 
 
  holdsObject = true;
  
