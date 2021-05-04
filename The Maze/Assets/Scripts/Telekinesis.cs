@@ -11,13 +11,15 @@ public class Telekinesis : MonoBehaviour
     public float minThrowForce;
     public float maxThrowForce;
     public AudioSource telekinesisAudio;
+    public AudioClip[] audioClipArray;
 
     private float throwForce;
     private GameObject heldObject;
     private Rigidbody rbOfHeldObject;
     private bool holdsObject = false;
     private Vector3 rotateVector = Vector3.one;
-    
+   
+
 
 
     void Start()
@@ -32,6 +34,7 @@ public class Telekinesis : MonoBehaviour
  {
     Raycast();
             telekinesisAudio.Play();
+            telekinesisAudio.PlayOneShot(RandomClip());
 
         }
 
@@ -144,4 +147,9 @@ public class Telekinesis : MonoBehaviour
  }
  }
  }
+
+AudioClip RandomClip()
+{
+        return audioClipArray[Random.Range(0, audioClipArray.Length)];
+}
 }

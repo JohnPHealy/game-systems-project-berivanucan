@@ -582,7 +582,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1195337299}
         m_TargetAssemblyTypeName: SceneManagement, Assembly-CSharp
-        m_MethodName: QuitGame
+        m_MethodName: playGame
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
