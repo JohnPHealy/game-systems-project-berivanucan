@@ -27,7 +27,7 @@ public class PlayerHealth : MonoBehaviour
         
         if (other.gameObject.CompareTag("Monster"))
         {
-            Debug.Log("simoneeeeeee!");
+            
             TakeDamage(1);
         }
 
